@@ -40,12 +40,51 @@ namespace InternationalTradingData
 
         public override TValue Get(TKey Key)
         {
-            return base.Get(Key);
+            return get(Key, Root);
         }
         
+        private TValue get(TKey key, Node<TKey, TValue> node)
+        {
+            if(node != null)
+            {
+                if(key.CompareTo(node.Key) == 0)
+                {
+                    return node.Value;
+                }
+                else if(key.CompareTo(node.Key) < 0)
+                {
+                    return get(key, node.Left);
+                }
+                else if(key.CompareTo(node.Key) > 0)
+                {
+                    return get(key, node.Right);
+                }
+            }
+            return default(TValue);
+        }
+
         public override void Edit(TKey Key, TValue Value)
         {
             base.Edit(Key, Value);
+        }
+
+        private void edit(TKey key, TValue value, ref Node<TKey, TValue> node)
+        {
+            if (node != null)
+            {
+                if (key.CompareTo(node.Key) == 0)
+                {
+                    node.Value = value;
+                }
+                else if (key.CompareTo(node.Key) < 0)
+                {
+                    edit(key, value, ref node.Left);
+                }
+                else if (key.CompareTo(node.Key) > 0)
+                {
+                    edit(key, value, ref node.Right);
+                }
+            }
         }
 
         public override void Delete(TKey Key)

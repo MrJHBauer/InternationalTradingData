@@ -20,11 +20,6 @@ namespace InternationalTradingData
             Console.WriteLine($"InOrder: {String.Join(", ", CountriesTree.InOrder())}");
             Console.WriteLine($"PreOrder: {String.Join(", ", CountriesTree.PreOrder())}");
             Console.WriteLine($"PostOrder: {String.Join(", ", CountriesTree.PostOrder())}");
-            Console.WriteLine("Brazil Deleted");
-            CountriesTree.Delete("Brazil");
-            Console.WriteLine($"InOrder: {String.Join(", ", CountriesTree.InOrder())}");
-            Console.WriteLine($"PreOrder: {String.Join(", ", CountriesTree.PreOrder())}");
-            Console.WriteLine($"PostOrder: {String.Join(", ", CountriesTree.PostOrder())}");
             Console.ReadKey();           
         }
     }
