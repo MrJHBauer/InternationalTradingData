@@ -13,10 +13,18 @@ namespace InternationalTradingData
             BSTree<String, Country> CountriesTree;
             Country[] countries = CountryParser.GetCountries("countries.csv");
             CountriesTree = new BSTree<string, Country>(countries[8].Name, countries[8]); // UK
-            CountriesTree.Create(countries[1].Name, countries[1]); // Canada
             CountriesTree.Create(countries[2].Name, countries[2]); // Brazil
+            CountriesTree.Create(countries[1].Name, countries[1]); // Canada            
             CountriesTree.Create(countries[26].Name, countries[26]); // Argentina
             CountriesTree.Create(countries[0].Name, countries[0]); // USA
+            Console.WriteLine($"InOrder: {String.Join(", ", CountriesTree.InOrder())}");
+            Console.WriteLine($"PreOrder: {String.Join(", ", CountriesTree.PreOrder())}");
+            Console.WriteLine($"PostOrder: {String.Join(", ", CountriesTree.PostOrder())}");
+            Console.WriteLine("Brazil Deleted");
+            CountriesTree.Delete("Brazil");
+            Console.WriteLine($"InOrder: {String.Join(", ", CountriesTree.InOrder())}");
+            Console.WriteLine($"PreOrder: {String.Join(", ", CountriesTree.PreOrder())}");
+            Console.WriteLine($"PostOrder: {String.Join(", ", CountriesTree.PostOrder())}");
             Console.ReadKey();           
         }
     }
