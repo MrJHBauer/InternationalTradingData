@@ -33,8 +33,8 @@ namespace InternationalTradingData
         /// <summary>
         /// Construct a new node specifying the Key and Value to hold.
         /// </summary>
-        /// <param name="Key">Unique key used to identify the value.</param>
-        /// <param name="Value">Actual data being stored by the node.</param>
+        /// <param name="Key">Unique key used to identify the node.</param>
+        /// <param name="Value">Actual data being stored in the node.</param>
         public Node(TKey Key, TValue Value)
         {
             this.Key = Key;
