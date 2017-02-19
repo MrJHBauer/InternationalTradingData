@@ -41,6 +41,13 @@ namespace InternationalTradingData
             this.TradePartners = TradePartners; 
         }
 
+        public static Country Clone(Country country)
+        {
+            return new Country(country.Name, country.GDP, 
+                country.Inflation, country.TradeBalance, 
+                country.HDI, country.TradePartners);
+        }
+
         /// <summary>
         /// Lexically compare countries names against one another.
         /// </summary>

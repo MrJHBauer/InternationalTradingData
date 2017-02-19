@@ -16,6 +16,8 @@ namespace InternationalTradingData.Tests
 
         private BinaryTree<String, Country> binaryTreeCountry;
 
+        private BSTree<String, Country> BSTreeCountry;
+
         private String URL = TestContext.CurrentContext.TestDirectory + "/countries.csv";
 
         [OneTimeSetUp]
@@ -33,6 +35,13 @@ namespace InternationalTradingData.Tests
             binaryTreeCountry.Root.Left.Left = new Node<string, Country>(Argentina.Name, Argentina);
             binaryTreeCountry.Root.Left.Right = new Node<string, Country>(Canada.Name, Canada);
             binaryTreeCountry.Root.Right = new Node<string, Country>(USA.Name, USA);
+
+            BSTreeCountry = new BSTree<string, Country>(UK.Name, UK);
+            BSTreeCountry.Create(UK.Name, UK);
+            BSTreeCountry.Create(USA.Name, USA);
+            BSTreeCountry.Create(Brazil.Name, Brazil);
+            BSTreeCountry.Create(Argentina.Name, Argentina);
+            BSTreeCountry.Create(Canada.Name, Canada);
         } 
 
         /// <summary>
@@ -116,6 +125,56 @@ namespace InternationalTradingData.Tests
             Assert.AreEqual(new List<String>(inOrder), binaryTreeCountry.InOrder());
             Assert.AreEqual(new List<String>(preOrder), binaryTreeCountry.PreOrder());
             Assert.AreEqual(new List<String>(postOrder), binaryTreeCountry.PostOrder());
-        }        
+        }
+
+        /// <summary>
+        /// Test to see if the BSTree is capable of reporting on if it contains a given node.
+        /// </summary>
+        [Test]
+        public void BSTreeContains()
+        {
+            Assert.IsTrue(BSTreeCountry.Contains("Canada"));
+            Assert.IsFalse(BSTreeCountry.Contains("France"));
+        }
+
+        /// <summary>
+        /// Test to see if the BSTree is capable of fetching a specified node.
+        /// </summary>
+        [Test]
+        public void BSTreeGet()
+        {
+            Assert.AreEqual(USA.GDP, BSTreeCountry.Get("USA").GDP);
+        }
+
+        /// <summary>
+        /// Test to see if the BSTree's traveral functions visit nodes correctly.
+        /// </summary>
+        [Test]
+        public void BSTreeTraversal()
+        {
+            String[] inOrder = new String[] { "Argentina", "Brazil", "Canada", "UK", "USA" };
+            String[] preOrder = new String[] { "UK", "Brazil", "Argentina", "Canada", "USA" };
+            String[] postOrder = new String[] { "Argentina", "Canada", "Brazil", "USA", "UK" };
+            Assert.AreEqual(new List<String>(inOrder), binaryTreeCountry.InOrder());
+            Assert.AreEqual(new List<String>(preOrder), binaryTreeCountry.PreOrder());
+            Assert.AreEqual(new List<String>(postOrder), binaryTreeCountry.PostOrder());
+        }
+
+        /// <summary>
+        /// Test if the BSTree edit functionality works correctly allowing for a value to fetched
+        /// manipulated and placed back into the tree.
+        /// </summary>
+        /// <see cref="BSTree{TKey, TValue}"/>
+        /// <seealso cref="Country"/>
+        public void BSTreeEdit()
+        {
+            Brazil = Country.Clone(BSTreeCountry.Get("Brazil"));
+            Assert.AreEqual(Brazil.GDP, BSTreeCountry.Get("Brazil").GDP);
+            Brazil.GDP = 12.3F;
+            Assert.AreNotEqual(Brazil.GDP, BSTreeCountry.Get("Brazil").GDP);
+            BSTreeCountry.Edit(Brazil.Name, Brazil);
+            Assert.AreEqual(Brazil.GDP, BSTreeCountry.Get("Brazil").GDP);
+        }
+
     }
 }
