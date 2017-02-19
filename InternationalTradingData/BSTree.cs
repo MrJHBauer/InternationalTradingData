@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace InternationalTradingData
 {
-    class BSTree<TKey, TValue> : BinaryTree<TKey, TValue> 
+    public class BSTree<TKey, TValue> : BinaryTree<TKey, TValue> 
         where TKey : IComparable<TKey> 
         where TValue : IComparable<TValue>
     {
+        public BSTree() : base() { }
+
+        public BSTree(TKey Key, TValue Value ) : base(Key, Value) { }
     }
 }
