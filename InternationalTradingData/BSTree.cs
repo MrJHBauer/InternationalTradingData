@@ -175,7 +175,7 @@ namespace InternationalTradingData
                         }
                         else
                         {
-                            node = node.Right;
+                            node = node.Left;
                         }
                     }
                     else if(node.Right != null)
