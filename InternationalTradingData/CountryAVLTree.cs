@@ -6,25 +6,18 @@ using System.Threading.Tasks;
 
 namespace InternationalTradingData
 {
-    /// <summary>
-    /// CountryBSTree is an impementation of the generic BSTree that explicitly uses Country as the
-    /// node's value. As a result this class can provide improved functionality specific to the 
-    /// Country class such as working with trading statistics that each Country instance contains. 
-    /// The class also attempts to clean up each of the node manipulation functions by asking for 
-    /// Name rather than Key. This helps reinforce the purpose of this class.
-    /// </summary>
-    public class CountryBSTree : BSTree<String, Country>
+    public class CountryAVLTree : AVLTree<String, Country>
     {
         /// <summary>
-        /// Construct a new CountryBSTree with null Root.
+        /// Construct a new CountryAVLTree with null Root.
         /// </summary>
-        public CountryBSTree() : base() { }
+        public CountryAVLTree() : base() { }
 
         /// <summary>
-        /// Construct a new CountryBSTree with Root containg the provided Country.
+        /// Construct a new CountryAVLTree with Root containg the provided Country.
         /// </summary>
         /// <param name="Country">Country object to be made Root.</param>
-        public CountryBSTree(Country Country) : base(Country.Name, Country) { }
+        public CountryAVLTree(Country Country) : base(Country.Name, Country) { }
 
         /// <summary>
         /// Add a new Country to the tree.
@@ -34,7 +27,7 @@ namespace InternationalTradingData
         {
             base.Create(Country.Name, Country);
         }
-        
+
         /// <summary>
         /// Fetch the Country with the specified name.
         /// </summary>
@@ -72,7 +65,7 @@ namespace InternationalTradingData
         {
             List<String> partials = new List<string>();
             List<String> names = InOrder();
-            foreach(String name in names)
+            foreach (String name in names)
             {
                 if (name.Contains(Partial))
                 {
@@ -91,9 +84,9 @@ namespace InternationalTradingData
         {
             List<String> partners = new List<string>();
             List<String> countries = InOrder();
-            foreach(String countryName in countries)
+            foreach (String countryName in countries)
             {
-                if(Get(countryName).TradePartners.Contains(Name))
+                if (Get(countryName).TradePartners.Contains(Name))
                 {
                     partners.Add(countryName);
                 }
@@ -110,14 +103,14 @@ namespace InternationalTradingData
             String currentBiggest = null;
             float currentBiggestPotential = 0.0f;
             float currentPotential = 0.0f;
-            foreach(String country in InOrder())
+            foreach (String country in InOrder())
             {
                 currentPotential = 0.0f;
-                foreach(String partner in Get(country).TradePartners)
+                foreach (String partner in Get(country).TradePartners)
                 {
                     currentPotential += Get(partner).GDP;
                 }
-                if(currentPotential > currentBiggestPotential)
+                if (currentPotential > currentBiggestPotential)
                 {
                     currentBiggest = country;
                     currentBiggestPotential = currentPotential;

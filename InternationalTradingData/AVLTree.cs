@@ -51,7 +51,6 @@ namespace InternationalTradingData
         /// <param name="node">Current node being visited.</param>
         private void create(TKey key, TValue value, ref Node<TKey, TValue> node)
         {
-
             if (node != null)
             {
                 if (key.CompareTo(node.Key) < 0)

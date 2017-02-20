@@ -22,6 +22,8 @@ namespace InternationalTradingData.Tests
 
         private AVLTree<String, Country> AVLTreeCountry;
 
+        private CountryAVLTree countryAVLTree;
+
         private String URL = TestContext.CurrentContext.TestDirectory + "/countries.csv";
 
         [OneTimeSetUp]
@@ -47,9 +49,11 @@ namespace InternationalTradingData.Tests
             BSTreeCountry.Create(Canada.Name, Canada);
 
             countryBSTree = new CountryBSTree();
+            countryAVLTree = new CountryAVLTree();
             foreach(Country country in CountryParser.GetCountries(URL))
             {
                 countryBSTree.Create(country);
+                countryAVLTree.Create(country);
             }
             AVLTreeCountry = new AVLTree<string, Country>();
             AVLTreeCountry.Create(UK.Name, UK);
@@ -204,6 +208,7 @@ namespace InternationalTradingData.Tests
             List<String> partners = new List<string>(
                 new String[] { "Germany", "Hong_Kong", "India", "Japan", "Norway", "USA" });
             Assert.AreEqual(partners, countryBSTree.GetTradeWith("UK"));
+            Assert.AreEqual(partners, countryAVLTree.GetTradeWith("UK"));
         }
 
         /// <summary>
@@ -217,6 +222,7 @@ namespace InternationalTradingData.Tests
         public void BiggestTradePotential()
         {
             Assert.AreEqual("Singapore", countryBSTree.GetBiggestTradePotential());
+            Assert.AreEqual("Singapore", countryAVLTree.GetBiggestTradePotential());
         }
 
         /// <summary>
@@ -229,6 +235,7 @@ namespace InternationalTradingData.Tests
         {
             List<String> expected = new List<String>(new String[] { "Canada", "Chile", "China" });
             Assert.AreEqual(expected, countryBSTree.GetPartials("C"));
+            Assert.AreEqual(expected, countryAVLTree.GetPartials("C"));
         }
 
         [Test]
