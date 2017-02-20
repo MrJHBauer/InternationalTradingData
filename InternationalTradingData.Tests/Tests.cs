@@ -20,6 +20,8 @@ namespace InternationalTradingData.Tests
 
         private CountryBSTree countryBSTree;
 
+        private AVLTree<String, Country> AVLTreeCountry;
+
         private String URL = TestContext.CurrentContext.TestDirectory + "/countries.csv";
 
         [OneTimeSetUp]
@@ -39,7 +41,6 @@ namespace InternationalTradingData.Tests
             binaryTreeCountry.Root.Right = new Node<string, Country>(USA.Name, USA);
 
             BSTreeCountry = new BSTree<string, Country>(UK.Name, UK);
-            BSTreeCountry.Create(UK.Name, UK);
             BSTreeCountry.Create(USA.Name, USA);
             BSTreeCountry.Create(Brazil.Name, Brazil);
             BSTreeCountry.Create(Argentina.Name, Argentina);
@@ -50,6 +51,13 @@ namespace InternationalTradingData.Tests
             {
                 countryBSTree.Create(country);
             }
+            AVLTreeCountry = new AVLTree<string, Country>();
+            AVLTreeCountry.Create(UK.Name, UK);
+            AVLTreeCountry.Create(USA.Name, USA);
+            AVLTreeCountry.Create(Brazil.Name, Brazil);
+            AVLTreeCountry.Create(Argentina.Name, Argentina);
+            AVLTreeCountry.Create(Canada.Name, Canada);
+            AVLTreeCountry.Create(countries[18].Name, countries[18]);
         } 
 
         /// <summary>
@@ -221,6 +229,14 @@ namespace InternationalTradingData.Tests
         {
             List<String> expected = new List<String>(new String[] { "Canada", "Chile", "China" });
             Assert.AreEqual(expected, countryBSTree.GetPartials("C"));
+        }
+
+        [Test]
+        public void AVLInsert()
+        {
+            String[] inOrder = new String[] { "Argentina", "Brazil", "Canada", "China", "UK", "USA" };
+            Assert.AreEqual(Canada, AVLTreeCountry.Root.Value);
+            Assert.AreEqual(inOrder, AVLTreeCountry.InOrder());
         }
     }
 }

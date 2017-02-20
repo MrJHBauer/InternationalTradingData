@@ -10,12 +10,12 @@ namespace InternationalTradingData
     {
         static void Main(string[] args)
         {
-            CountryBSTree CountryBSTree = new CountryBSTree();
+            AVLTree<String, Country> CountryAVLTree = new AVLTree<string, Country>();
             foreach(Country country in CountryParser.GetCountries("countries.csv"))
             {
-                CountryBSTree.Create(country);
+                CountryAVLTree.Create(country.Name, country);
             }
-            Console.WriteLine($"Partial Matching 'Ch'\n{String.Join("\n", CountryBSTree.GetPartials("C"))}");
+            Console.WriteLine(String.Join("\n", CountryAVLTree.InOrder()));
             Console.ReadKey();           
         }
     }

@@ -251,7 +251,7 @@ namespace InternationalTradingData
         /// </summary>
         /// <param name="node">Current node visited.</param>
         /// <returns>Current height of visited node.</returns>
-        private int getHeight(Node<TKey, TValue> node)
+        protected int getHeight(Node<TKey, TValue> node)
         {
             return node == null ? 0 : 1 + Math.Max(getHeight(node.Left),
                 getHeight(node.Right));

@@ -52,5 +52,7 @@ namespace InternationalTradingData
         /// Value being stored within the node.
         /// </summary>
         public TValue Value { get; set; }
+
+        public int BalanceFactor { get; set; }
     }
 }
