@@ -64,6 +64,25 @@ namespace InternationalTradingData
         }
 
         /// <summary>
+        /// Find names of countries that match the partially against the supplied Partial name.
+        /// </summary>
+        /// <param name="Partial">Partial name of country being searched for.</param>
+        /// <returns>List of countries' names matching partially.</returns>
+        public List<String> GetPartials(String Partial)
+        {
+            List<String> partials = new List<string>();
+            List<String> names = InOrder();
+            foreach(String name in names)
+            {
+                if (name.Contains(Partial))
+                {
+                    partials.Add(name);
+                }
+            }
+            return partials;
+        }
+
+        /// <summary>
         /// Find all of the countries that trade with the country provided.
         /// </summary>
         /// <param name="Name">Name of Country trade partners are been discovered for.</param>

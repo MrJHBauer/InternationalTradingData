@@ -210,5 +210,17 @@ namespace InternationalTradingData.Tests
         {
             Assert.AreEqual("Singapore", countryBSTree.GetBiggestTradePotential());
         }
+
+        /// <summary>
+        /// Attempts to determine if the Country specific BSTree can discover all countries that
+        /// partially match against the supplied string.
+        /// </summary>
+        /// <see cref="CountryBSTree"/>
+        [Test]
+        public void CountryPartial()
+        {
+            List<String> expected = new List<String>(new String[] { "Canada", "Chile", "China" });
+            Assert.AreEqual(expected, countryBSTree.GetPartials("C"));
+        }
     }
 }
