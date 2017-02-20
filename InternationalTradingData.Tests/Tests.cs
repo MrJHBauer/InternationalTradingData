@@ -18,6 +18,8 @@ namespace InternationalTradingData.Tests
 
         private BSTree<String, Country> BSTreeCountry;
 
+        private CountryBSTree countryBSTree;
+
         private String URL = TestContext.CurrentContext.TestDirectory + "/countries.csv";
 
         [OneTimeSetUp]
@@ -42,6 +44,12 @@ namespace InternationalTradingData.Tests
             BSTreeCountry.Create(Brazil.Name, Brazil);
             BSTreeCountry.Create(Argentina.Name, Argentina);
             BSTreeCountry.Create(Canada.Name, Canada);
+
+            countryBSTree = new CountryBSTree();
+            foreach(Country country in CountryParser.GetCountries(URL))
+            {
+                countryBSTree.Create(country);
+            }
         } 
 
         /// <summary>
@@ -176,5 +184,31 @@ namespace InternationalTradingData.Tests
             Assert.AreEqual(Brazil.GDP, BSTreeCountry.Get("Brazil").GDP);
         }
 
+        /// <summary>
+        /// Test aims to establish if the Country specific BSTree is capable of determing which 
+        /// countries trade with the specified country.
+        /// </summary>
+        /// <see cref="CountryBSTree"/>
+        /// <seealso cref="Country"/>
+        [Test]
+        public void TradePartners()
+        {
+            List<String> partners = new List<string>(
+                new String[] { "Germany", "Hong_Kong", "India", "Japan", "Norway", "USA" });
+            Assert.AreEqual(partners, countryBSTree.GetTradeWith("UK"));
+        }
+
+        /// <summary>
+        /// Test aims to establish if the Country specific BSTree is capable of determing which 
+        /// country has the biggest trade potential. This is calculated by summing the GDP of all
+        /// main trading partners with a country.
+        /// </summary>
+        /// <see cref="CountryBSTree"/>
+        /// <seealso cref="Country"/>
+        [Test]
+        public void BiggestTradePotential()
+        {
+            Assert.AreEqual("Singapore", countryBSTree.GetBiggestTradePotential());
+        }
     }
 }
