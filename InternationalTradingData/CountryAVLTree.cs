@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace InternationalTradingData
 {
+    /// <summary>
+    /// CountryAVLTree is an impementation of a generic AVLTree that explicitly uses Country as the
+    /// node's value. As a result this class can provide improved functionality specific to the 
+    /// Country class such as working with trading statistics that each Country instance contains. 
+    /// The class also attempts to clean up each of the node manipulation functions by asking for 
+    /// Name rather than Key. This helps reinforce the purpose of this class.
+    /// </summary>
     public class CountryAVLTree : AVLTree<String, Country>
     {
         /// <summary>
