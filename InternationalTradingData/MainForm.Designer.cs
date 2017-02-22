@@ -179,6 +179,7 @@
             this.Btn_Edit.TabIndex = 14;
             this.Btn_Edit.Text = "Edit";
             this.Btn_Edit.UseVisualStyleBackColor = true;
+            this.Btn_Edit.Click += new System.EventHandler(this.Btn_Edit_Click);
             // 
             // Btn_Delete
             // 
@@ -198,6 +199,7 @@
             this.Btn_Clear.TabIndex = 16;
             this.Btn_Clear.Text = "Clear";
             this.Btn_Clear.UseVisualStyleBackColor = true;
+            this.Btn_Clear.Click += new System.EventHandler(this.Btn_Clear_Click);
             // 
             // Btn_Submit
             // 
@@ -207,6 +209,7 @@
             this.Btn_Submit.TabIndex = 17;
             this.Btn_Submit.Text = "Submit";
             this.Btn_Submit.UseVisualStyleBackColor = true;
+            this.Btn_Submit.Click += new System.EventHandler(this.Btn_Submit_Click);
             // 
             // Label_N_Countries
             // 

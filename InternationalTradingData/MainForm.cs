@@ -54,5 +54,37 @@ namespace InternationalTradingData
             countries.Delete(TBox_Name.Text);
             LBox_Countries.DataSource = countries.InOrder();
         }
+
+        private void Btn_Clear_Click(object sender, EventArgs e)
+        {
+            TBox_Name.Text = "";
+            TBox_GDP.Text = "";
+            TBox_Inflation.Text = "";
+            TBox_TradeBalance.Text = "";
+            TBox_HDI.Text = "";
+            TBox_MainTradePartners.Text = "";
+        }
+
+        private void Btn_Edit_Click(object sender, EventArgs e)
+        {
+            TBox_Name.Enabled = true;
+            TBox_GDP.Enabled = true;
+            TBox_Inflation.Enabled = true;
+            TBox_TradeBalance.Enabled = true;
+            TBox_HDI.Enabled = true;
+            TBox_MainTradePartners.Enabled = true;
+        }
+        
+        private void Btn_Submit_Click(object sender, EventArgs e)
+        {
+            Country editedCountry = new Country();
+            editedCountry.Name = TBox_Name.Text;
+            editedCountry.GDP = float.Parse(TBox_GDP.Text);
+            editedCountry.Inflation = float.Parse(TBox_Inflation.Text);
+            editedCountry.TradeBalance = float.Parse(TBox_TradeBalance.Text);
+            editedCountry.HDI = float.Parse(TBox_HDI.Text);
+            editedCountry.TradePartners = new LinkedList<String>(TBox_MainTradePartners.Text.Split(','));
+            countries.Edit(editedCountry);
+        }
     }
 }
