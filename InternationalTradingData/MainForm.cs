@@ -44,7 +44,10 @@ namespace InternationalTradingData
         {
             Country selectedCountry = countries.Get(LBox_Countries.SelectedItem.ToString());
             populateFields(selectedCountry);
+            Label_N_Countries.Text = $"Number of countries: {countries.GetNodeCount()}";
+            Label_Height.Text = $"Tree height: {countries.GetHeight()}";
         }
+
 
         private void Btn_Delete_Click(object sender, EventArgs e)
         {
