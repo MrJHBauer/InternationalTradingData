@@ -46,7 +46,10 @@ namespace InternationalTradingData
             populateFields(selectedCountry);
         }
 
-        
-
+        private void Btn_Delete_Click(object sender, EventArgs e)
+        {
+            countries.Delete(TBox_Name.Text);
+            LBox_Countries.DataSource = countries.InOrder();
+        }
     }
 }
