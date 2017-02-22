@@ -35,13 +35,13 @@
             this.Label_Inflation = new System.Windows.Forms.Label();
             this.Label_TradeBalance = new System.Windows.Forms.Label();
             this.Label_HDI = new System.Windows.Forms.Label();
-            this.Label_MainTradingPartners = new System.Windows.Forms.Label();
+            this.Label_MainTradePartners = new System.Windows.Forms.Label();
             this.TBox_Name = new System.Windows.Forms.TextBox();
             this.TBox_GDP = new System.Windows.Forms.TextBox();
             this.TBox_Inflation = new System.Windows.Forms.TextBox();
             this.TBox_TradeBalance = new System.Windows.Forms.TextBox();
             this.TBox_HDI = new System.Windows.Forms.TextBox();
-            this.TBox_MainTradingPartners = new System.Windows.Forms.TextBox();
+            this.TBox_MainTradePartners = new System.Windows.Forms.TextBox();
             this.Btn_Edit = new System.Windows.Forms.Button();
             this.Btn_Delete = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -63,11 +63,12 @@
             this.LBox_Countries.Name = "LBox_Countries";
             this.LBox_Countries.Size = new System.Drawing.Size(120, 199);
             this.LBox_Countries.TabIndex = 1;
+            this.LBox_Countries.SelectedIndexChanged += new System.EventHandler(this.LBox_Countries_SelectedIndexChanged);
             // 
             // Label_Name
             // 
             this.Label_Name.AutoSize = true;
-            this.Label_Name.Location = new System.Drawing.Point(299, 72);
+            this.Label_Name.Location = new System.Drawing.Point(302, 72);
             this.Label_Name.Name = "Label_Name";
             this.Label_Name.Size = new System.Drawing.Size(38, 13);
             this.Label_Name.TabIndex = 2;
@@ -76,7 +77,7 @@
             // Label_GDP
             // 
             this.Label_GDP.AutoSize = true;
-            this.Label_GDP.Location = new System.Drawing.Point(213, 99);
+            this.Label_GDP.Location = new System.Drawing.Point(216, 99);
             this.Label_GDP.Name = "Label_GDP";
             this.Label_GDP.Size = new System.Drawing.Size(124, 13);
             this.Label_GDP.TabIndex = 3;
@@ -85,7 +86,7 @@
             // Label_Inflation
             // 
             this.Label_Inflation.AutoSize = true;
-            this.Label_Inflation.Location = new System.Drawing.Point(290, 126);
+            this.Label_Inflation.Location = new System.Drawing.Point(293, 126);
             this.Label_Inflation.Name = "Label_Inflation";
             this.Label_Inflation.Size = new System.Drawing.Size(47, 13);
             this.Label_Inflation.TabIndex = 4;
@@ -94,7 +95,7 @@
             // Label_TradeBalance
             // 
             this.Label_TradeBalance.AutoSize = true;
-            this.Label_TradeBalance.Location = new System.Drawing.Point(257, 153);
+            this.Label_TradeBalance.Location = new System.Drawing.Point(260, 153);
             this.Label_TradeBalance.Name = "Label_TradeBalance";
             this.Label_TradeBalance.Size = new System.Drawing.Size(80, 13);
             this.Label_TradeBalance.TabIndex = 5;
@@ -103,20 +104,20 @@
             // Label_HDI
             // 
             this.Label_HDI.AutoSize = true;
-            this.Label_HDI.Location = new System.Drawing.Point(198, 180);
+            this.Label_HDI.Location = new System.Drawing.Point(201, 180);
             this.Label_HDI.Name = "Label_HDI";
             this.Label_HDI.Size = new System.Drawing.Size(139, 13);
             this.Label_HDI.TabIndex = 6;
             this.Label_HDI.Text = "Human Development Index:";
             // 
-            // Label_MainTradingPartners
+            // Label_MainTradePartners
             // 
-            this.Label_MainTradingPartners.AutoSize = true;
-            this.Label_MainTradingPartners.Location = new System.Drawing.Point(223, 207);
-            this.Label_MainTradingPartners.Name = "Label_MainTradingPartners";
-            this.Label_MainTradingPartners.Size = new System.Drawing.Size(114, 13);
-            this.Label_MainTradingPartners.TabIndex = 7;
-            this.Label_MainTradingPartners.Text = "Main Trading Partners:";
+            this.Label_MainTradePartners.AutoSize = true;
+            this.Label_MainTradePartners.Location = new System.Drawing.Point(234, 207);
+            this.Label_MainTradePartners.Name = "Label_MainTradePartners";
+            this.Label_MainTradePartners.Size = new System.Drawing.Size(106, 13);
+            this.Label_MainTradePartners.TabIndex = 7;
+            this.Label_MainTradePartners.Text = "Main Trade Partners:";
             // 
             // TBox_Name
             // 
@@ -153,12 +154,12 @@
             this.TBox_HDI.Size = new System.Drawing.Size(159, 20);
             this.TBox_HDI.TabIndex = 12;
             // 
-            // TBox_MainTradingPartners
+            // TBox_MainTradePartners
             // 
-            this.TBox_MainTradingPartners.Location = new System.Drawing.Point(356, 204);
-            this.TBox_MainTradingPartners.Name = "TBox_MainTradingPartners";
-            this.TBox_MainTradingPartners.Size = new System.Drawing.Size(159, 20);
-            this.TBox_MainTradingPartners.TabIndex = 13;
+            this.TBox_MainTradePartners.Location = new System.Drawing.Point(356, 204);
+            this.TBox_MainTradePartners.Name = "TBox_MainTradePartners";
+            this.TBox_MainTradePartners.Size = new System.Drawing.Size(159, 20);
+            this.TBox_MainTradePartners.TabIndex = 13;
             // 
             // Btn_Edit
             // 
@@ -185,13 +186,13 @@
             this.ClientSize = new System.Drawing.Size(624, 281);
             this.Controls.Add(this.Btn_Delete);
             this.Controls.Add(this.Btn_Edit);
-            this.Controls.Add(this.TBox_MainTradingPartners);
+            this.Controls.Add(this.TBox_MainTradePartners);
             this.Controls.Add(this.TBox_HDI);
             this.Controls.Add(this.TBox_TradeBalance);
             this.Controls.Add(this.TBox_Inflation);
             this.Controls.Add(this.TBox_GDP);
             this.Controls.Add(this.TBox_Name);
-            this.Controls.Add(this.Label_MainTradingPartners);
+            this.Controls.Add(this.Label_MainTradePartners);
             this.Controls.Add(this.Label_HDI);
             this.Controls.Add(this.Label_TradeBalance);
             this.Controls.Add(this.Label_Inflation);
@@ -217,13 +218,13 @@
         private System.Windows.Forms.Label Label_Inflation;
         private System.Windows.Forms.Label Label_TradeBalance;
         private System.Windows.Forms.Label Label_HDI;
-        private System.Windows.Forms.Label Label_MainTradingPartners;
+        private System.Windows.Forms.Label Label_MainTradePartners;
         private System.Windows.Forms.TextBox TBox_Name;
         private System.Windows.Forms.TextBox TBox_GDP;
         private System.Windows.Forms.TextBox TBox_Inflation;
         private System.Windows.Forms.TextBox TBox_TradeBalance;
         private System.Windows.Forms.TextBox TBox_HDI;
-        private System.Windows.Forms.TextBox TBox_MainTradingPartners;
+        private System.Windows.Forms.TextBox TBox_MainTradePartners;
         private System.Windows.Forms.Button Btn_Edit;
         private System.Windows.Forms.Button Btn_Delete;
     }
