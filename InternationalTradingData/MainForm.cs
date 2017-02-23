@@ -40,15 +40,25 @@ namespace InternationalTradingData
             TBox_MainTradePartners.Text = String.Join(", ", country.TradePartners);
         }
 
+        private void enableFields(Boolean state)
+        {
+            TBox_Name.Enabled = state;
+            TBox_GDP.Enabled = state;
+            TBox_Inflation.Enabled = state;
+            TBox_TradeBalance.Enabled = state;
+            TBox_HDI.Enabled = state;
+            TBox_MainTradePartners.Enabled = state;
+        }
+
         private void LBox_Countries_SelectedIndexChanged(object sender, EventArgs e)
         {
             Country selectedCountry = countries.Get(LBox_Countries.SelectedItem.ToString());
             populateFields(selectedCountry);
             Label_N_Countries.Text = $"Number of countries: {countries.GetNodeCount()}";
             Label_Height.Text = $"Tree height: {countries.GetHeight()}";
+            enableFields(false);
         }
-
-
+        
         private void Btn_Delete_Click(object sender, EventArgs e)
         {
             countries.Delete(TBox_Name.Text);
@@ -67,12 +77,7 @@ namespace InternationalTradingData
 
         private void Btn_Edit_Click(object sender, EventArgs e)
         {
-            TBox_Name.Enabled = true;
-            TBox_GDP.Enabled = true;
-            TBox_Inflation.Enabled = true;
-            TBox_TradeBalance.Enabled = true;
-            TBox_HDI.Enabled = true;
-            TBox_MainTradePartners.Enabled = true;
+            enableFields(true);
         }
         
         private void Btn_Submit_Click(object sender, EventArgs e)
