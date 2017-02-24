@@ -48,13 +48,22 @@
             this.Btn_Submit = new System.Windows.Forms.Button();
             this.Label_N_Countries = new System.Windows.Forms.Label();
             this.Label_Height = new System.Windows.Forms.Label();
+            this.MenuBar = new System.Windows.Forms.MenuStrip();
+            this.MItem_File = new System.Windows.Forms.ToolStripMenuItem();
+            this.MItem_Search = new System.Windows.Forms.ToolStripMenuItem();
+            this.MItem_SearchName = new System.Windows.Forms.ToolStripMenuItem();
+            this.MItem_SearchPartners = new System.Windows.Forms.ToolStripMenuItem();
+            this.MItem_SearchTradeItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MItem_Quit = new System.Windows.Forms.ToolStripMenuItem();
+            this.MItem_About = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // Title
             // 
             this.Title.AutoSize = true;
             this.Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Title.Location = new System.Drawing.Point(110, 18);
+            this.Title.Location = new System.Drawing.Point(100, 29);
             this.Title.Name = "Title";
             this.Title.Size = new System.Drawing.Size(415, 37);
             this.Title.TabIndex = 0;
@@ -63,7 +72,7 @@
             // LBox_Countries
             // 
             this.LBox_Countries.FormattingEnabled = true;
-            this.LBox_Countries.Location = new System.Drawing.Point(67, 71);
+            this.LBox_Countries.Location = new System.Drawing.Point(67, 76);
             this.LBox_Countries.Name = "LBox_Countries";
             this.LBox_Countries.Size = new System.Drawing.Size(120, 199);
             this.LBox_Countries.TabIndex = 1;
@@ -72,7 +81,7 @@
             // Label_Name
             // 
             this.Label_Name.AutoSize = true;
-            this.Label_Name.Location = new System.Drawing.Point(302, 72);
+            this.Label_Name.Location = new System.Drawing.Point(302, 77);
             this.Label_Name.Name = "Label_Name";
             this.Label_Name.Size = new System.Drawing.Size(38, 13);
             this.Label_Name.TabIndex = 2;
@@ -81,7 +90,7 @@
             // Label_GDP
             // 
             this.Label_GDP.AutoSize = true;
-            this.Label_GDP.Location = new System.Drawing.Point(216, 99);
+            this.Label_GDP.Location = new System.Drawing.Point(216, 104);
             this.Label_GDP.Name = "Label_GDP";
             this.Label_GDP.Size = new System.Drawing.Size(124, 13);
             this.Label_GDP.TabIndex = 3;
@@ -90,7 +99,7 @@
             // Label_Inflation
             // 
             this.Label_Inflation.AutoSize = true;
-            this.Label_Inflation.Location = new System.Drawing.Point(293, 126);
+            this.Label_Inflation.Location = new System.Drawing.Point(293, 131);
             this.Label_Inflation.Name = "Label_Inflation";
             this.Label_Inflation.Size = new System.Drawing.Size(47, 13);
             this.Label_Inflation.TabIndex = 4;
@@ -99,7 +108,7 @@
             // Label_TradeBalance
             // 
             this.Label_TradeBalance.AutoSize = true;
-            this.Label_TradeBalance.Location = new System.Drawing.Point(260, 153);
+            this.Label_TradeBalance.Location = new System.Drawing.Point(260, 158);
             this.Label_TradeBalance.Name = "Label_TradeBalance";
             this.Label_TradeBalance.Size = new System.Drawing.Size(80, 13);
             this.Label_TradeBalance.TabIndex = 5;
@@ -108,7 +117,7 @@
             // Label_HDI
             // 
             this.Label_HDI.AutoSize = true;
-            this.Label_HDI.Location = new System.Drawing.Point(201, 180);
+            this.Label_HDI.Location = new System.Drawing.Point(201, 185);
             this.Label_HDI.Name = "Label_HDI";
             this.Label_HDI.Size = new System.Drawing.Size(139, 13);
             this.Label_HDI.TabIndex = 6;
@@ -117,7 +126,7 @@
             // Label_MainTradePartners
             // 
             this.Label_MainTradePartners.AutoSize = true;
-            this.Label_MainTradePartners.Location = new System.Drawing.Point(234, 207);
+            this.Label_MainTradePartners.Location = new System.Drawing.Point(234, 212);
             this.Label_MainTradePartners.Name = "Label_MainTradePartners";
             this.Label_MainTradePartners.Size = new System.Drawing.Size(106, 13);
             this.Label_MainTradePartners.TabIndex = 7;
@@ -126,7 +135,7 @@
             // TBox_Name
             // 
             this.TBox_Name.Enabled = false;
-            this.TBox_Name.Location = new System.Drawing.Point(356, 69);
+            this.TBox_Name.Location = new System.Drawing.Point(356, 74);
             this.TBox_Name.Name = "TBox_Name";
             this.TBox_Name.Size = new System.Drawing.Size(159, 20);
             this.TBox_Name.TabIndex = 8;
@@ -134,7 +143,7 @@
             // TBox_GDP
             // 
             this.TBox_GDP.Enabled = false;
-            this.TBox_GDP.Location = new System.Drawing.Point(356, 96);
+            this.TBox_GDP.Location = new System.Drawing.Point(356, 101);
             this.TBox_GDP.Name = "TBox_GDP";
             this.TBox_GDP.Size = new System.Drawing.Size(159, 20);
             this.TBox_GDP.TabIndex = 9;
@@ -142,7 +151,7 @@
             // TBox_Inflation
             // 
             this.TBox_Inflation.Enabled = false;
-            this.TBox_Inflation.Location = new System.Drawing.Point(356, 123);
+            this.TBox_Inflation.Location = new System.Drawing.Point(356, 128);
             this.TBox_Inflation.Name = "TBox_Inflation";
             this.TBox_Inflation.Size = new System.Drawing.Size(159, 20);
             this.TBox_Inflation.TabIndex = 10;
@@ -150,7 +159,7 @@
             // TBox_TradeBalance
             // 
             this.TBox_TradeBalance.Enabled = false;
-            this.TBox_TradeBalance.Location = new System.Drawing.Point(356, 150);
+            this.TBox_TradeBalance.Location = new System.Drawing.Point(356, 155);
             this.TBox_TradeBalance.Name = "TBox_TradeBalance";
             this.TBox_TradeBalance.Size = new System.Drawing.Size(159, 20);
             this.TBox_TradeBalance.TabIndex = 11;
@@ -158,7 +167,7 @@
             // TBox_HDI
             // 
             this.TBox_HDI.Enabled = false;
-            this.TBox_HDI.Location = new System.Drawing.Point(356, 177);
+            this.TBox_HDI.Location = new System.Drawing.Point(356, 182);
             this.TBox_HDI.Name = "TBox_HDI";
             this.TBox_HDI.Size = new System.Drawing.Size(159, 20);
             this.TBox_HDI.TabIndex = 12;
@@ -166,14 +175,14 @@
             // TBox_MainTradePartners
             // 
             this.TBox_MainTradePartners.Enabled = false;
-            this.TBox_MainTradePartners.Location = new System.Drawing.Point(356, 204);
+            this.TBox_MainTradePartners.Location = new System.Drawing.Point(356, 209);
             this.TBox_MainTradePartners.Name = "TBox_MainTradePartners";
             this.TBox_MainTradePartners.Size = new System.Drawing.Size(159, 20);
             this.TBox_MainTradePartners.TabIndex = 13;
             // 
             // Btn_Edit
             // 
-            this.Btn_Edit.Location = new System.Drawing.Point(537, 95);
+            this.Btn_Edit.Location = new System.Drawing.Point(537, 100);
             this.Btn_Edit.Name = "Btn_Edit";
             this.Btn_Edit.Size = new System.Drawing.Size(75, 23);
             this.Btn_Edit.TabIndex = 14;
@@ -183,7 +192,7 @@
             // 
             // Btn_Delete
             // 
-            this.Btn_Delete.Location = new System.Drawing.Point(537, 173);
+            this.Btn_Delete.Location = new System.Drawing.Point(537, 178);
             this.Btn_Delete.Name = "Btn_Delete";
             this.Btn_Delete.Size = new System.Drawing.Size(75, 23);
             this.Btn_Delete.TabIndex = 15;
@@ -193,7 +202,7 @@
             // 
             // Btn_Clear
             // 
-            this.Btn_Clear.Location = new System.Drawing.Point(537, 147);
+            this.Btn_Clear.Location = new System.Drawing.Point(537, 152);
             this.Btn_Clear.Name = "Btn_Clear";
             this.Btn_Clear.Size = new System.Drawing.Size(75, 23);
             this.Btn_Clear.TabIndex = 16;
@@ -203,7 +212,7 @@
             // 
             // Btn_Submit
             // 
-            this.Btn_Submit.Location = new System.Drawing.Point(537, 121);
+            this.Btn_Submit.Location = new System.Drawing.Point(537, 126);
             this.Btn_Submit.Name = "Btn_Submit";
             this.Btn_Submit.Size = new System.Drawing.Size(75, 23);
             this.Btn_Submit.TabIndex = 17;
@@ -214,7 +223,7 @@
             // Label_N_Countries
             // 
             this.Label_N_Countries.AutoSize = true;
-            this.Label_N_Countries.Location = new System.Drawing.Point(234, 239);
+            this.Label_N_Countries.Location = new System.Drawing.Point(234, 244);
             this.Label_N_Countries.Name = "Label_N_Countries";
             this.Label_N_Countries.Size = new System.Drawing.Size(105, 13);
             this.Label_N_Countries.TabIndex = 18;
@@ -223,17 +232,79 @@
             // Label_Height
             // 
             this.Label_Height.AutoSize = true;
-            this.Label_Height.Location = new System.Drawing.Point(275, 259);
+            this.Label_Height.Location = new System.Drawing.Point(275, 264);
             this.Label_Height.Name = "Label_Height";
             this.Label_Height.Size = new System.Drawing.Size(64, 13);
             this.Label_Height.TabIndex = 19;
             this.Label_Height.Text = "Tree height:";
             // 
+            // MenuBar
+            // 
+            this.MenuBar.BackColor = System.Drawing.SystemColors.Control;
+            this.MenuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MItem_File,
+            this.MItem_About});
+            this.MenuBar.Location = new System.Drawing.Point(0, 0);
+            this.MenuBar.Name = "MenuBar";
+            this.MenuBar.Size = new System.Drawing.Size(624, 24);
+            this.MenuBar.TabIndex = 20;
+            this.MenuBar.Text = "menuStrip1";
+            // 
+            // MItem_File
+            // 
+            this.MItem_File.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MItem_Search,
+            this.MItem_Quit});
+            this.MItem_File.Name = "MItem_File";
+            this.MItem_File.Size = new System.Drawing.Size(37, 20);
+            this.MItem_File.Text = "File";
+            // 
+            // MItem_Search
+            // 
+            this.MItem_Search.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MItem_SearchName,
+            this.MItem_SearchPartners,
+            this.MItem_SearchTradeItem});
+            this.MItem_Search.Name = "MItem_Search";
+            this.MItem_Search.Size = new System.Drawing.Size(152, 22);
+            this.MItem_Search.Text = "Search";
+            // 
+            // MItem_SearchName
+            // 
+            this.MItem_SearchName.Name = "MItem_SearchName";
+            this.MItem_SearchName.Size = new System.Drawing.Size(233, 22);
+            this.MItem_SearchName.Text = "Search By Name";
+            // 
+            // MItem_SearchPartners
+            // 
+            this.MItem_SearchPartners.Name = "MItem_SearchPartners";
+            this.MItem_SearchPartners.Size = new System.Drawing.Size(233, 22);
+            this.MItem_SearchPartners.Text = "Search For Trade Partners";
+            // 
+            // MItem_SearchTradeItem
+            // 
+            this.MItem_SearchTradeItem.Name = "MItem_SearchTradeItem";
+            this.MItem_SearchTradeItem.Size = new System.Drawing.Size(233, 22);
+            this.MItem_SearchTradeItem.Text = "Search Biggest Trade Potential";
+            // 
+            // MItem_Quit
+            // 
+            this.MItem_Quit.Name = "MItem_Quit";
+            this.MItem_Quit.Size = new System.Drawing.Size(152, 22);
+            this.MItem_Quit.Text = "Quit";
+            this.MItem_Quit.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
+            // 
+            // MItem_About
+            // 
+            this.MItem_About.Name = "MItem_About";
+            this.MItem_About.Size = new System.Drawing.Size(52, 20);
+            this.MItem_About.Text = "About";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 283);
+            this.ClientSize = new System.Drawing.Size(624, 301);
             this.Controls.Add(this.Label_Height);
             this.Controls.Add(this.Label_N_Countries);
             this.Controls.Add(this.Btn_Submit);
@@ -254,10 +325,14 @@
             this.Controls.Add(this.Label_Name);
             this.Controls.Add(this.LBox_Countries);
             this.Controls.Add(this.Title);
+            this.Controls.Add(this.MenuBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MainMenuStrip = this.MenuBar;
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "International Trading Data";
+            this.MenuBar.ResumeLayout(false);
+            this.MenuBar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,5 +360,13 @@
         private System.Windows.Forms.Button Btn_Submit;
         private System.Windows.Forms.Label Label_N_Countries;
         private System.Windows.Forms.Label Label_Height;
+        private System.Windows.Forms.MenuStrip MenuBar;
+        private System.Windows.Forms.ToolStripMenuItem MItem_File;
+        private System.Windows.Forms.ToolStripMenuItem MItem_Search;
+        private System.Windows.Forms.ToolStripMenuItem MItem_SearchName;
+        private System.Windows.Forms.ToolStripMenuItem MItem_SearchPartners;
+        private System.Windows.Forms.ToolStripMenuItem MItem_SearchTradeItem;
+        private System.Windows.Forms.ToolStripMenuItem MItem_Quit;
+        private System.Windows.Forms.ToolStripMenuItem MItem_About;
     }
 }

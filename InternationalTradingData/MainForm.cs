@@ -91,5 +91,10 @@ namespace InternationalTradingData
             editedCountry.TradePartners = new LinkedList<String>(TBox_MainTradePartners.Text.Split(','));
             countries.Edit(editedCountry);
         }
+
+        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
