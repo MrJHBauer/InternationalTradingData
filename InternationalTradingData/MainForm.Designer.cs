@@ -173,7 +173,7 @@
             // 
             // Btn_Edit
             // 
-            this.Btn_Edit.Location = new System.Drawing.Point(537, 94);
+            this.Btn_Edit.Location = new System.Drawing.Point(537, 95);
             this.Btn_Edit.Name = "Btn_Edit";
             this.Btn_Edit.Size = new System.Drawing.Size(75, 23);
             this.Btn_Edit.TabIndex = 14;
@@ -183,7 +183,7 @@
             // 
             // Btn_Delete
             // 
-            this.Btn_Delete.Location = new System.Drawing.Point(537, 175);
+            this.Btn_Delete.Location = new System.Drawing.Point(537, 173);
             this.Btn_Delete.Name = "Btn_Delete";
             this.Btn_Delete.Size = new System.Drawing.Size(75, 23);
             this.Btn_Delete.TabIndex = 15;
@@ -193,7 +193,7 @@
             // 
             // Btn_Clear
             // 
-            this.Btn_Clear.Location = new System.Drawing.Point(537, 148);
+            this.Btn_Clear.Location = new System.Drawing.Point(537, 147);
             this.Btn_Clear.Name = "Btn_Clear";
             this.Btn_Clear.Size = new System.Drawing.Size(75, 23);
             this.Btn_Clear.TabIndex = 16;
@@ -216,16 +216,18 @@
             this.Label_N_Countries.AutoSize = true;
             this.Label_N_Countries.Location = new System.Drawing.Point(234, 239);
             this.Label_N_Countries.Name = "Label_N_Countries";
-            this.Label_N_Countries.Size = new System.Drawing.Size(0, 13);
+            this.Label_N_Countries.Size = new System.Drawing.Size(105, 13);
             this.Label_N_Countries.TabIndex = 18;
+            this.Label_N_Countries.Text = "Number of countries:";
             // 
             // Label_Height
             // 
             this.Label_Height.AutoSize = true;
             this.Label_Height.Location = new System.Drawing.Point(275, 259);
             this.Label_Height.Name = "Label_Height";
-            this.Label_Height.Size = new System.Drawing.Size(0, 13);
+            this.Label_Height.Size = new System.Drawing.Size(64, 13);
             this.Label_Height.TabIndex = 19;
+            this.Label_Height.Text = "Tree height:";
             // 
             // MainForm
             // 
