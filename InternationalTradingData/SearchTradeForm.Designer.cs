@@ -84,6 +84,7 @@
             this.Controls.Add(this.TBox_Search);
             this.Controls.Add(this.Label_TradePartner);
             this.Controls.Add(this.DGridView_Countries);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "SearchTradeForm";
             this.Text = "Search For Common Trade Partner";
             ((System.ComponentModel.ISupportInitialize)(this.DGridView_Countries)).EndInit();

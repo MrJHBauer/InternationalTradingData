@@ -73,6 +73,7 @@
             this.Controls.Add(this.TBox_Search);
             this.Controls.Add(this.Label_Name);
             this.Controls.Add(this.DGridView_Countries);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "SearchCountryForm";
             this.Text = "Search For Country";
             ((System.ComponentModel.ISupportInitialize)(this.DGridView_Countries)).EndInit();

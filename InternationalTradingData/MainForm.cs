@@ -107,5 +107,11 @@ namespace InternationalTradingData
             SearchTradeForm form = new SearchTradeForm(countries);
             form.Show();
         }
+
+        private void MItem_SearchTradeItem_Click(object sender, EventArgs e)
+        {
+            TradePotentialDialogue form = new TradePotentialDialogue(countries);
+            form.Show();
+        }
     }
 }

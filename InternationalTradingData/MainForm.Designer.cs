@@ -288,6 +288,7 @@
             this.MItem_SearchTradeItem.Name = "MItem_SearchTradeItem";
             this.MItem_SearchTradeItem.Size = new System.Drawing.Size(233, 22);
             this.MItem_SearchTradeItem.Text = "Search Biggest Trade Potential";
+            this.MItem_SearchTradeItem.Click += new System.EventHandler(this.MItem_SearchTradeItem_Click);
             // 
             // MItem_Quit
             // 

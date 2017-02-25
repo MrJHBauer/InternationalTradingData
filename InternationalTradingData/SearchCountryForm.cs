@@ -13,7 +13,8 @@ namespace InternationalTradingData
     public partial class SearchCountryForm : Form
     {
         private CountryAVLTree countries;
-        DataTable dataTable;
+        private DataTable dataTable;
+
         public SearchCountryForm(CountryAVLTree countries)
         {
             InitializeComponent();
