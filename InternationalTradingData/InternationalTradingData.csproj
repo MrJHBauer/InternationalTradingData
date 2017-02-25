@@ -70,6 +70,12 @@
     <Compile Include="SearchCountryForm.Designer.cs">
       <DependentUpon>SearchCountryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchTradeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchTradeForm.Designer.cs">
+      <DependentUpon>SearchTradeForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -80,6 +86,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SearchCountryForm.resx">
       <DependentUpon>SearchCountryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchTradeForm.resx">
+      <DependentUpon>SearchTradeForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

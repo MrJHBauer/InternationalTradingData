@@ -12,7 +12,6 @@ namespace InternationalTradingData
 {
     public partial class MainForm : Form
     {
-
         private CountryAVLTree countries = new CountryAVLTree();
 
         public MainForm()
@@ -100,6 +99,12 @@ namespace InternationalTradingData
         private void MItem_SearchName_Click(object sender, EventArgs e)
         {
             SearchCountryForm form = new SearchCountryForm(countries);
+            form.Show();
+        }
+
+        private void MItem_SearchPartners_Click(object sender, EventArgs e)
+        {
+            SearchTradeForm form = new SearchTradeForm(countries);
             form.Show();
         }
     }

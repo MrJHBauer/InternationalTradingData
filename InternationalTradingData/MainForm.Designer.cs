@@ -281,6 +281,7 @@
             this.MItem_SearchPartners.Name = "MItem_SearchPartners";
             this.MItem_SearchPartners.Size = new System.Drawing.Size(233, 22);
             this.MItem_SearchPartners.Text = "Search For Trade Partners";
+            this.MItem_SearchPartners.Click += new System.EventHandler(this.MItem_SearchPartners_Click);
             // 
             // MItem_SearchTradeItem
             // 
