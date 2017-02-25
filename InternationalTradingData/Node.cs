@@ -53,6 +53,9 @@ namespace InternationalTradingData
         /// </summary>
         public TValue Value { get; set; }
 
+        /// <summary>
+        /// Balance of the node. Determined by height of left minus height of right.
+        /// </summary>
         public int BalanceFactor { get; set; }
     }
 }

@@ -10,10 +10,17 @@ using System.Windows.Forms;
 
 namespace InternationalTradingData
 {
+    /// <summary>
+    /// This class is repsonsible for providing information on the country with the largest trade potential.
+    /// </summary>
     public partial class TradePotentialDialogue : Form
     {
         private CountryAVLTree countries;
 
+        /// <summary>
+        /// Entry point for the form.
+        /// </summary>
+        /// <param name="countries"></param>
         public TradePotentialDialogue(CountryAVLTree countries)
         {
             InitializeComponent();
@@ -21,13 +28,16 @@ namespace InternationalTradingData
             init();
         }
 
+        /// <summary>
+        /// Initalise the form by doing a search for the country with the biggest potential. Once 
+        /// found write its name in the center of the form.
+        /// </summary>
         private void init()
         {
             String name = countries.GetBiggestTradePotential();
             Country country = countries.Get(name);
 
             Label_TradePotential.Text = $"{country.Name} has the biggest trade potential";
-
         }
     }
 }

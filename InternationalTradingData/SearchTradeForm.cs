@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace InternationalTradingData
 {
+    /// <summary>
+    /// The class provides functionality to the search rade form. This form is responsible for 
+    /// providing information on each country that trades with the country in question. 
+    /// </summary>
     public partial class SearchTradeForm : Form
     {
         private CountryAVLTree countries;
         private DataTable dataTable;
 
+        /// <summary>
+        /// Entry point for the form.
+        /// </summary>
+        /// <param name="countries"></param>
         public SearchTradeForm(CountryAVLTree countries)
         {
             InitializeComponent();
@@ -22,11 +30,17 @@ namespace InternationalTradingData
             init();
         }
 
+        /// <summary>
+        /// Initialise the form.
+        /// </summary>
         private void init()
         {
             initDataGrid();
         }
 
+        /// <summary>
+        /// Initalise the data grid with properties of the country as columns for the table.
+        /// </summary>
         private void initDataGrid()
         {
             dataTable = new DataTable();
@@ -40,6 +54,12 @@ namespace InternationalTradingData
             DGridView_Countries.DataSource = dataTable;
         }
 
+        /// <summary>
+        /// When the user clicks the search button attempt to locate all countries that trade 
+        /// with the provided name.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Search_Click(object sender, EventArgs e)
         {
             DGridView_Countries.DataSource = null;
