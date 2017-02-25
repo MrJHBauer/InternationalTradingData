@@ -274,6 +274,7 @@
             this.MItem_SearchName.Name = "MItem_SearchName";
             this.MItem_SearchName.Size = new System.Drawing.Size(233, 22);
             this.MItem_SearchName.Text = "Search By Name";
+            this.MItem_SearchName.Click += new System.EventHandler(this.MItem_SearchName_Click);
             // 
             // MItem_SearchPartners
             // 

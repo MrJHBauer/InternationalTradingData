@@ -96,5 +96,11 @@ namespace InternationalTradingData
         {
             Application.Exit();
         }
+        
+        private void MItem_SearchName_Click(object sender, EventArgs e)
+        {
+            SearchCountryForm form = new SearchCountryForm(countries);
+            form.Show();
+        }
     }
 }
