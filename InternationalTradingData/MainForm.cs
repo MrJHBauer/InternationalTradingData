@@ -140,14 +140,19 @@ namespace InternationalTradingData
         /// <param name="e"></param>
         private void Btn_Submit_Click(object sender, EventArgs e)
         {
-            Country editedCountry = new Country();
-            editedCountry.Name = TBox_Name.Text;
-            editedCountry.GDP = float.Parse(TBox_GDP.Text);
-            editedCountry.Inflation = float.Parse(TBox_Inflation.Text);
-            editedCountry.TradeBalance = float.Parse(TBox_TradeBalance.Text);
-            editedCountry.HDI = float.Parse(TBox_HDI.Text);
-            editedCountry.TradePartners = new LinkedList<String>(TBox_MainTradePartners.Text.Split(','));
-            countries.Edit(editedCountry);
+            Country country = new Country();
+            country.Name = TBox_Name.Text;
+            try
+            {
+                country.GDP = float.Parse(TBox_GDP.Text);
+                country.Inflation = float.Parse(TBox_Inflation.Text);
+                country.TradeBalance = float.Parse(TBox_TradeBalance.Text);
+                country.HDI = float.Parse(TBox_HDI.Text);
+                
+            }
+            catch { }
+            country.TradePartners = new LinkedList<String>(TBox_MainTradePartners.Text.Split(','));
+            countries.Edit(country);
         }
 
         private void quitToolStripMenuItem_Click(object sender, EventArgs e)
