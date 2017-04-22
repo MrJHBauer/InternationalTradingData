@@ -21,7 +21,7 @@ namespace InternationalTradingData
         public CountryAVLTree() : base() { }
 
         /// <summary>
-        /// Construct a new CountryAVLTree with Root containg the provided Country.
+        /// Construct a new CountryAVLTree with Root contaning the provided Country.
         /// </summary>
         /// <param name="Country">Country object to be made Root.</param>
         public CountryAVLTree(Country Country) : base(Country.Name, Country) { }

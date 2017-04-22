@@ -10,14 +10,18 @@ namespace InternationalTradingData.Tests
     [TestFixture]
     public class Tests
     {
-        private Country[] Countries;
+        private Country[] countries;
+
+        private CountryAVLTree countryAVL;
 
         private String URL = TestContext.CurrentContext.TestDirectory + "/countries.csv";
 
         [OneTimeSetUp]
         public void Init()
         {
-            Countries = CountryParser.GetCountries(URL);
+            countries = CountryParser.GetCountries(URL);
+            countryAVL = new CountryAVLTree();
+            countries.ToList().ForEach(country => countryAVL.Create(country));
         } 
 
         /// <summary>
@@ -30,7 +34,7 @@ namespace InternationalTradingData.Tests
         [Test]
         public void ParserContents()
         {
-            Assert.AreEqual(27, Countries.Length);
+            Assert.AreEqual(27, countries.Length);
         }
 
         /// <summary>
@@ -45,13 +49,27 @@ namespace InternationalTradingData.Tests
         [Test]
         public void ParserFormat()
         {
-            Country USA = Countries[0];
+            Country USA = countries[0];
             Assert.AreEqual("USA", USA.Name);
             Assert.AreEqual(1.8f, USA.GDP);
             Assert.AreEqual(2f, USA.Inflation);
             Assert.AreEqual(-3.1f, USA.TradeBalance);
             Assert.AreEqual(4f, USA.HDI);
             Assert.AreEqual(new LinkedList<String>(new String[] { "Canada", "UK", "Brazil" }), USA.TradePartners);
+        }
+
+        /// <summary>
+        /// This test determines if the AVLTree containing all of the countries have succesfully
+        /// been stored within the tree in addition to being located and returned for usage outside
+        /// or updating later down the line.
+        /// </summary>
+        /// <see cref="CountryAVLTree"/>
+        [Test]
+        public void CountryAVLGet()
+        {
+            Country USAFromFile = countries[0];
+            Country USAFromTree = countryAVL.Get("USA");
+            Assert.AreEqual(USAFromFile.Name, USAFromTree.Name);
         }
     }
 }
