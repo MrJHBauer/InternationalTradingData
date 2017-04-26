@@ -86,7 +86,7 @@ namespace InternationalTradingData
         /// <param name="Key">Key of node to be deleted.</param>
         public override void Delete(TKey Key)
         {
-            base.Delete(Key);
+            delete(Key, ref Root);
         }
 
         /// <summary>
@@ -133,11 +133,11 @@ namespace InternationalTradingData
             }
             if (node != null)
             {
-                if (node.BalanceFactor <= -2)
+                if (node.Right != null && node.BalanceFactor <= -2)
                 {
                     rotateLeft(ref node);
                 }
-                if (node.BalanceFactor >= 2)
+                if (node.Left != null && node.BalanceFactor >= 2)
                 {
                     rotateRight(ref node);
                 }
