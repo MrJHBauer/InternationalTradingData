@@ -56,6 +56,7 @@
             this.MItem_SearchTradeItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MItem_Quit = new System.Windows.Forms.ToolStripMenuItem();
             this.MItem_About = new System.Windows.Forms.ToolStripMenuItem();
+            this.Label_Root = new System.Windows.Forms.Label();
             this.MenuBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -223,7 +224,7 @@
             // Label_N_Countries
             // 
             this.Label_N_Countries.AutoSize = true;
-            this.Label_N_Countries.Location = new System.Drawing.Point(234, 244);
+            this.Label_N_Countries.Location = new System.Drawing.Point(234, 260);
             this.Label_N_Countries.Name = "Label_N_Countries";
             this.Label_N_Countries.Size = new System.Drawing.Size(105, 13);
             this.Label_N_Countries.TabIndex = 18;
@@ -232,7 +233,7 @@
             // Label_Height
             // 
             this.Label_Height.AutoSize = true;
-            this.Label_Height.Location = new System.Drawing.Point(275, 264);
+            this.Label_Height.Location = new System.Drawing.Point(275, 280);
             this.Label_Height.Name = "Label_Height";
             this.Label_Height.Size = new System.Drawing.Size(64, 13);
             this.Label_Height.TabIndex = 19;
@@ -266,7 +267,7 @@
             this.MItem_SearchPartners,
             this.MItem_SearchTradeItem});
             this.MItem_Search.Name = "MItem_Search";
-            this.MItem_Search.Size = new System.Drawing.Size(152, 22);
+            this.MItem_Search.Size = new System.Drawing.Size(109, 22);
             this.MItem_Search.Text = "Search";
             // 
             // MItem_SearchName
@@ -293,7 +294,7 @@
             // MItem_Quit
             // 
             this.MItem_Quit.Name = "MItem_Quit";
-            this.MItem_Quit.Size = new System.Drawing.Size(152, 22);
+            this.MItem_Quit.Size = new System.Drawing.Size(109, 22);
             this.MItem_Quit.Text = "Quit";
             this.MItem_Quit.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
@@ -303,11 +304,21 @@
             this.MItem_About.Size = new System.Drawing.Size(52, 20);
             this.MItem_About.Text = "About";
             // 
+            // Label_Root
+            // 
+            this.Label_Root.AutoSize = true;
+            this.Label_Root.Location = new System.Drawing.Point(306, 244);
+            this.Label_Root.Name = "Label_Root";
+            this.Label_Root.Size = new System.Drawing.Size(33, 13);
+            this.Label_Root.TabIndex = 21;
+            this.Label_Root.Text = "Root:";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 301);
+            this.Controls.Add(this.Label_Root);
             this.Controls.Add(this.Label_Height);
             this.Controls.Add(this.Label_N_Countries);
             this.Controls.Add(this.Btn_Submit);
@@ -371,5 +382,6 @@
         private System.Windows.Forms.ToolStripMenuItem MItem_SearchTradeItem;
         private System.Windows.Forms.ToolStripMenuItem MItem_Quit;
         private System.Windows.Forms.ToolStripMenuItem MItem_About;
+        private System.Windows.Forms.Label Label_Root;
     }
 }

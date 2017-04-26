@@ -42,6 +42,7 @@ namespace InternationalTradingData
                 countries.Create(country);
             }
             LBox_Countries.DataSource = countries.InOrder();
+            Label_Root.Text = $"Root: {countries.Root.Value.Name}";
             Label_N_Countries.Text = $"Number of countries: {countries.GetNodeCount()}";
             Label_Height.Text = $"Tree height: {countries.GetHeight()}";
         }
