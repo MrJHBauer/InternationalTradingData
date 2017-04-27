@@ -158,7 +158,7 @@ namespace InternationalTradingData
         /// </summary>
         /// <param name="key">Unique key used to identify the node being deleted.</param>
         /// <param name="node">Current position within the tree.</param>
-        private void delete(TKey key, ref Node<TKey, TValue> node)
+        protected void delete(TKey key, ref Node<TKey, TValue> node)
         {
             if(node != null)
             {

@@ -96,52 +96,24 @@ namespace InternationalTradingData
         /// </summary>
         /// <param name="key">Unique key used to identify the node being deleted.</param>
         /// <param name="node">Current node being visited.</param>
-        private void delete(TKey key, ref Node<TKey, TValue> node)
+        protected new void delete(TKey key, ref Node<TKey, TValue> node)
         {
-            if (key.CompareTo(node.Key) == 0)
+            base.delete(key, ref node);
+
+            if(node != null)
             {
-                if (node.Left != null)
-                {
-                    if (node.Right != null)
-                    {
-                        Node<TKey, TValue> minNode = leastItem(node.Right);
-                        node.Key = minNode.Key;
-                        node.Value = minNode.Value;
-                        delete(key, ref node.Right);
-                    }
-                    else
-                    {
-                        node = node.Left;
-                    }
-                }
-                else if (node.Right != null)
-                {
-                    node = node.Right;
-                }
-                else
-                {
-                    node = null;
-                }
-            }
-            else if (node.Left != null && key.CompareTo(node.Key) < 0)
-            {
-                delete(key, ref node.Left);
-            }
-            else if (node.Right != null && key.CompareTo(node.Key) > 0)
-            {
-                delete(key, ref node.Right);
-            }
-            if (node != null)
-            {
-                if (node.Right != null && node.BalanceFactor <= -2)
+                node.BalanceFactor = getHeight(node.Left)
+                - getHeight(node.Right);
+
+                if (node.BalanceFactor <= -2)
                 {
                     rotateLeft(ref node);
                 }
-                if (node.Left != null && node.BalanceFactor >= 2)
+                if (node.BalanceFactor >= 2)
                 {
                     rotateRight(ref node);
                 }
-            }
+            }            
         }
 
         /// <summary>
@@ -168,7 +140,7 @@ namespace InternationalTradingData
         /// <param name="node">Node for tree to be rotated around.</param>
         private void rotateRight(ref Node<TKey, TValue> node)
         {
-            if (node.Left.BalanceFactor < 0)
+            if (node.Left != null && node.Left.BalanceFactor < 0)
             {
                 rotateLeft(ref node.Left);
             }

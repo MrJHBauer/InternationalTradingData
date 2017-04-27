@@ -101,7 +101,10 @@ namespace InternationalTradingData
         {
             countries.Delete(TBox_Name.Text);
             LBox_Countries.DataSource = countries.InOrder();
-            Label_Root.Text = $"Root: {countries.Root.Value.Name}";
+            if (countries.Root != null)
+                Label_Root.Text = $"Root: {countries.Root.Value.Name}";
+            else
+                Label_Root.Text = "Root: No Countries";
             Label_N_Countries.Text = $"Number of countries: {countries.GetNodeCount()}";
             Label_Height.Text = $"Tree height: {countries.GetHeight()}";
         }
