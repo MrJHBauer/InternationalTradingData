@@ -152,10 +152,15 @@ namespace InternationalTradingData
                 country.GDP = float.Parse(TBox_GDP.Text);
                 country.Inflation = float.Parse(TBox_Inflation.Text);
                 country.TradeBalance = float.Parse(TBox_TradeBalance.Text);
-                country.HDI = float.Parse(TBox_HDI.Text);
-                
+                country.HDI = float.Parse(TBox_HDI.Text);                
             }
-            catch { }
+            catch(FormatException)
+            {
+                MessageBox.Show("You have provided invalid data for updating a country. " 
+                    + "Please try again with valid data", "Invalid Data Provided!", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             country.TradePartners = new LinkedList<String>(TBox_MainTradePartners.Text.Split(','));
             countries.Edit(country);
         }
