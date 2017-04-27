@@ -243,7 +243,7 @@ namespace InternationalTradingData
         /// <returns>Integer value outlining the height of the tree.</returns>
         public int GetHeight()
         {
-            return getHeight(Root) - 1;
+            return getHeight(Root);
         }
 
         /// <summary>
