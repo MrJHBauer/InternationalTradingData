@@ -107,23 +107,25 @@ namespace InternationalTradingData
         /// <returns>Name of country with largest trading potential.</returns>
         public String GetBiggestTradePotential()
         {
-            String currentBiggest = null;
-            float currentBiggestPotential = 0.0f;
-            float currentPotential = 0.0f;
-            foreach(String country in InOrder())
+            Country biggestPotential = null;
+            float biggestPotentialAmount = 0;
+
+            foreach (String name in InOrder())
             {
-                currentPotential = 0.0f;
-                foreach(String partner in Get(country).TradePartners)
+                float amount = 0.0f;
+                Country country = Get(name);
+                foreach (String partnerName in country.TradePartners)
                 {
-                    currentPotential += Get(partner).GDP;
+                    Country partner = Contains(partnerName) ? Get(partnerName) : null;
+                    amount += partner != null ? partner.GDP : 0;
                 }
-                if(currentPotential > currentBiggestPotential)
+                if (amount > biggestPotentialAmount)
                 {
-                    currentBiggest = country;
-                    currentBiggestPotential = currentPotential;
+                    biggestPotentialAmount = amount;
+                    biggestPotential = country;
                 }
             }
-            return currentBiggest;
+            return biggestPotential.Name;
         }
     }
 }
