@@ -55,7 +55,6 @@
             this.MItem_SearchPartners = new System.Windows.Forms.ToolStripMenuItem();
             this.MItem_SearchTradeItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MItem_Quit = new System.Windows.Forms.ToolStripMenuItem();
-            this.MItem_About = new System.Windows.Forms.ToolStripMenuItem();
             this.Label_Root = new System.Windows.Forms.Label();
             this.MenuBar.SuspendLayout();
             this.SuspendLayout();
@@ -243,8 +242,7 @@
             // 
             this.MenuBar.BackColor = System.Drawing.SystemColors.Control;
             this.MenuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MItem_File,
-            this.MItem_About});
+            this.MItem_File});
             this.MenuBar.Location = new System.Drawing.Point(0, 0);
             this.MenuBar.Name = "MenuBar";
             this.MenuBar.Size = new System.Drawing.Size(624, 24);
@@ -267,7 +265,7 @@
             this.MItem_SearchPartners,
             this.MItem_SearchTradeItem});
             this.MItem_Search.Name = "MItem_Search";
-            this.MItem_Search.Size = new System.Drawing.Size(109, 22);
+            this.MItem_Search.Size = new System.Drawing.Size(152, 22);
             this.MItem_Search.Text = "Search";
             // 
             // MItem_SearchName
@@ -294,15 +292,9 @@
             // MItem_Quit
             // 
             this.MItem_Quit.Name = "MItem_Quit";
-            this.MItem_Quit.Size = new System.Drawing.Size(109, 22);
+            this.MItem_Quit.Size = new System.Drawing.Size(152, 22);
             this.MItem_Quit.Text = "Quit";
             this.MItem_Quit.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
-            // 
-            // MItem_About
-            // 
-            this.MItem_About.Name = "MItem_About";
-            this.MItem_About.Size = new System.Drawing.Size(52, 20);
-            this.MItem_About.Text = "About";
             // 
             // Label_Root
             // 
@@ -381,7 +373,6 @@
         private System.Windows.Forms.ToolStripMenuItem MItem_SearchPartners;
         private System.Windows.Forms.ToolStripMenuItem MItem_SearchTradeItem;
         private System.Windows.Forms.ToolStripMenuItem MItem_Quit;
-        private System.Windows.Forms.ToolStripMenuItem MItem_About;
         private System.Windows.Forms.Label Label_Root;
     }
 }
