@@ -161,7 +161,7 @@ namespace InternationalTradingData
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            country.TradePartners = new LinkedList<String>(TBox_MainTradePartners.Text.Split(','));
+            country.TradePartners = new LinkedList<String>(TBox_MainTradePartners.Text.Replace(", ", ",").Split(','));
             countries.Edit(country);
         }
 
