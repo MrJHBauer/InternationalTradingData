@@ -39,7 +39,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinaryTreeTests.cs" />
+    <Compile Include="AVLTreeTests.cs" />
     <Compile Include="BSTreeTests.cs" />
+    <Compile Include="CountryAVLTreeTests.cs" />
     <Compile Include="CountryBSTreeTests.cs" />
     <Compile Include="CountryParserTests.cs" />
     <Compile Include="CountryTests.cs" />

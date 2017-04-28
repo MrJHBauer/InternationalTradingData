@@ -83,7 +83,9 @@ namespace InternationalTradingData
         }
 
         /// <summary>
-        /// Find all of the countries that trade with the country provided.
+        /// Find all of the countries that trade with the country provided. Countries are included 
+        /// if the specified country appears in their trading partner list or if the speicifed 
+        /// country includes them within their list.
         /// </summary>
         /// <param name="Name">Name of Country trade partners are been discovered for.</param>
         /// <returns>List of name of trading partners.</returns>
@@ -97,6 +99,12 @@ namespace InternationalTradingData
                 {
                     partners.Add(countryName);
                 }
+            }
+            // Add trading partners found within the countries data.
+            foreach(String partner in Get(Name).TradePartners)
+            {
+                if (!partners.Contains(partner))
+                    partners.Add(partner);
             }
             return partners;
         }

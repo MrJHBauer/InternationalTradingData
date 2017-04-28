@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 namespace InternationalTradingData.Tests
 {
     [TestFixture]
-    public class CountryBSTreeTests
+    public class CountryAVLTreeTests
     {
         private String URL = TestContext.CurrentContext.TestDirectory + "/countries.csv";
 
-        private CountryBSTree BSTCountry;
+        private CountryAVLTree AVLTCountry;
 
         [OneTimeSetUp]
         public void Init()
@@ -20,43 +20,43 @@ namespace InternationalTradingData.Tests
             Country[] countries;
             countries = CountryParser.GetCountries(URL);
 
-            BSTCountry = new CountryBSTree();
-            countries.ToList().ForEach(c => BSTCountry.Create(c));
+            AVLTCountry = new CountryAVLTree();
+            countries.ToList().ForEach(c => AVLTCountry.Create(c));
         }
 
         /// <summary>
-        /// Test explores the <code>CountryBSTree</code> and its ability to find partial matches 
+        /// Test explores the <code>CountryAVLTree</code> and its ability to find partial matches 
         /// to the names of countries.
         /// </summary>
-        /// <see cref="CountryBSTree"/>
+        /// <see cref="CountryAVLTree"/>
         [Test]
-        public void CountryBSTreeGetPartials()
+        public void CountryAVLTreeGetPartials()
         {
             List<String> expected = new List<string>(new String[] { "Canada", "Chile", "China" });
-            Assert.AreEqual(expected, BSTCountry.GetPartials("C"));
+            Assert.AreEqual(expected, AVLTCountry.GetPartials("C"));
         }
 
         /// <summary>
-        /// Test explores the <code>CountryBSTree</code> to if it capable of findind all trade 
+        /// Test explores the <code>CountryAVLTree</code> to if it capable of findind all trade 
         /// partners with a given country.
         /// </summary>
-        /// <see cref="CountryBSTree"/>
+        /// <see cref="CountryAVLTree"/>
         [Test]
-        public void CountryBSTreeGetTradeWith()
+        public void CountryAVLTreeGetTradeWith()
         {
             List<String> expected = new List<string>(new String[] { "USA", "China" });
-            Assert.AreEqual(expected, BSTCountry.GetTradeWith("Canada"));
+            Assert.AreEqual(expected, AVLTCountry.GetTradeWith("Canada"));
         }
 
         /// <summary>
-        /// Test explores the <code>CountryBSTree</code> and its ability to determine the biggest 
+        /// Test explores the <code>CountryAVLTree</code> and its ability to determine the biggest 
         /// trade potential amongst all of the countries within the tree.
         /// </summary>
-        /// <see cref="CountryBSTree"/>
+        /// <see cref="CountryAVLTree"/>
         [Test]
-        public void CountryBSTreeGetBiggestTradePotential()
+        public void CountryAVLTreeGetBiggestTradePotential()
         {
-            Assert.AreEqual("Singapore", BSTCountry.GetBiggestTradePotential());
+            Assert.AreEqual("Singapore", AVLTCountry.GetBiggestTradePotential());
         }
     }
 }

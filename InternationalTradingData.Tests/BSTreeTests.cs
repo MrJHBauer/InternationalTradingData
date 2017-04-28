@@ -27,7 +27,7 @@ namespace InternationalTradingData.Tests
             UK = countries[8];
             Russia = countries[12];
             China = countries[18];
-            // Binary Tree has no insertion algorithm must be placed in tree by hand.
+
             BSTCountry = new BSTree<string, Country>(USA.Name, USA);
             BSTCountry.Create(Canada.Name, Canada);
             BSTCountry.Create(UK.Name, UK);
