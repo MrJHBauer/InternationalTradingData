@@ -43,9 +43,9 @@ namespace InternationalTradingData
 
         public static Country Clone(Country country)
         {
-            return new Country(country.Name, country.GDP, 
+            return country != null ? new Country(country.Name, country.GDP, 
                 country.Inflation, country.TradeBalance, 
-                country.HDI, country.TradePartners);
+                country.HDI, country.TradePartners) : null;
         }
 
         /// <summary>

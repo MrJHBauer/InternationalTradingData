@@ -35,9 +35,11 @@ namespace InternationalTradingData
         private void init()
         {
             String name = countries.GetBiggestTradePotential();
-            Country country = countries.Get(name);
 
-            Label_TradePotential.Text = $"{country.Name} has the biggest trade potential";
+            if (!String.IsNullOrEmpty(name))
+                Label_TradePotential.Text = $"{name} has the biggest trade potential";
+            else
+                Label_TradePotential.Text = "No Countries Present!";
         }
     }
 }

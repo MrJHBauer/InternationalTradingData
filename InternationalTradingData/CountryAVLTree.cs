@@ -127,7 +127,7 @@ namespace InternationalTradingData
                     biggestPotential = country;
                 }
             }
-            return biggestPotential.Name;
+            return biggestPotential != null ? biggestPotential.Name : String.Empty;
         }
     }
 }
