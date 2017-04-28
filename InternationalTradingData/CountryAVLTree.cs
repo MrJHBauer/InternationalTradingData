@@ -100,12 +100,6 @@ namespace InternationalTradingData
                     partners.Add(countryName);
                 }
             }
-            // Add trading partners found within the countries data.
-            foreach(String partner in Get(Name).TradePartners)
-            {
-                if (!partners.Contains(partner))
-                    partners.Add(partner);
-            }
             return partners;
         }
 

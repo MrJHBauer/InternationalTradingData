@@ -44,7 +44,7 @@ namespace InternationalTradingData.Tests
         [Test]
         public void CountryBSTreeGetTradeWith()
         {
-            List<String> expected = new List<string>(new String[] { "USA", "China" });
+            List<String> expected = new List<string>(new String[] { "USA" });
             Assert.AreEqual(expected, BSTCountry.GetTradeWith("Canada"));
         }
 
