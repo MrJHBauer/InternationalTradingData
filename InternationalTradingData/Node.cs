@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace InternationalTradingData
 {
     /// <summary>
-    /// Just a quick test.
     /// Node represents a single point within a tree. Each point contains information about other 
     /// nodes known as the children nodes (Left, Right) allowing node to be connected and 
     /// traversed one to another. There are only two child nodes for each node as this is being 
